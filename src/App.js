@@ -10,7 +10,7 @@ function App() {
   function fetchImages() {
     axios
       .get(
-        "https://www.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=01974d37b105336833a49ed15abecc2e&per_page=10&page=2&format=json&nojsoncallback=1"
+        "https://www.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=01974d37b105336833a49ed15abecc2e&per_page=10&format=json&nojsoncallback=1"
       )
       .then(function (res) {
         console.log(res);
@@ -22,6 +22,7 @@ function App() {
         setPhotos(picArray);
       });
   }
+ 
 
   const handleShowDialog = () => {
     setIsOpen(!isOpen);
@@ -74,6 +75,7 @@ function App() {
                     style={{ position: "absolute" }}
                     open
                     onClick={handleShowDialog}
+                    key={pic}
                   >
                     <img
                       key={index}
